@@ -26,24 +26,33 @@ carrinho = []
 
 while True:
   pedido = input("Qual item gostaria de comprar: ")
+
   if pedido == "0":
     break
+
   if not pedido.isdigit():
     print("Insira um numero!")
     continue
+
   elif pedido not in lista_pedidos:
-    print("Insira um numero valido de pedido!")
-    continue
-  quantidade = input("Qual a quantidade do item selecionado gostaria de compra: ")
-  if not quantidade.isdigit():
-    print("Insira uma quantidade valida!")
-    continue
-  quantidade = int(quantidade)
-  if quantidade <= 0:
-    print("Quantidade tem que ser maior que 0!")
+    print("Escolha uma opção do cardápio (1, 2 ou 3)")
     continue
 
+  while True:
+    quantidade = input("Qual a quantidade do item selecionado gostaria de compra: ")
+
+    if not quantidade.isdigit():
+     print("Insira uma quantidade valida!")
+     continue
+   
+    quantidade = int(quantidade)
+
+    if quantidade <= 0:
+     print("Quantidade tem que ser maior que 0!")
+     continue
+    break
   subtotal = lista_pedidos[pedido]["preco"] * quantidade
+  print(f'{quantidade} x {lista_pedidos[pedido]["nome"]} Adicionado ao carrinho!')
   total += subtotal
   carrinho.append(f"{quantidade} x {lista_pedidos[pedido]['nome']} - R$ {subtotal:.2f}")
 
