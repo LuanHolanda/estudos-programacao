@@ -9,15 +9,29 @@
 # Entrada: 5
 # Saída: 1 2 3 4 5
 
-def valida_numero(msg):
-  print("Insira um numero Inteiro e positivo")
-  numero = input(msg)
-  while True:
-    if numero <= 0:
-      print("numero precisa ser positivo e maior que zero!")
-      continue
-    elif numero == "":
-      print('Precisa ser um valor numerico')
-      continue
-    elif not int(numero):
-      print("Precisa ser um valor inteiro ")
+def valida_numero():
+    while True:
+        try:
+            numero = int(input("Numero: "))
+            if numero < 0:
+                print("Insira um numero maior que 0")
+                continue
+            return numero
+        except ValueError:
+            print("Insira um numero inteiro e positivo!")
+
+
+print("A seguir insira um numero inteiro e positivo. Para sair basta inserir o 0")
+
+while True:
+    numero = valida_numero()
+
+    if numero == 0:
+        print("Encerrando o programa...")
+        break
+
+    print(f"\nO numero que voce inseriu foi {numero} e os numeros de 1 até ele são:")
+
+    for i in range(1, numero + 1):
+        print(i)
+  
