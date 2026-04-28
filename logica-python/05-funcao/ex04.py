@@ -15,11 +15,12 @@ def valida_opcao():
     while True:
         print("1 - Cadastrar")
         print("2 - Listar")
+        print("3 - Buscar jogo pelo nome")
         print("0 - Sair")
 
         opcao = input("Escolha: ")
 
-        if opcao in ["1", "2", "0"]:
+        if opcao in ["1", "2", "3", "0"]:
             return opcao
 
         print("Opção inválida!")
@@ -44,6 +45,12 @@ while True:
     else:
       for jogo in jogos:
         print(f"| Nome: {jogo['nome']} | Console: {jogo['console']} |")
+  elif opcao == "3":
+     buscar = valida_texto("Qual jogo deseja buscar: ")
+     if buscar in jogos:
+        print("Temos esse jogo disponivel!")
+     else:
+        print("Nao temos esse jogo disponivel")
   elif opcao == "0":
     print("Encerrando programa...")
     break
