@@ -34,7 +34,7 @@ def listarArquivo(nomeArquivo):
         dados = a.readlines()
     finally: #listando ou não
         a.close()
-    return dados
+        return dados
 
 def inserir_score(nomeArquivo, nomeJogador, score):
     try:
