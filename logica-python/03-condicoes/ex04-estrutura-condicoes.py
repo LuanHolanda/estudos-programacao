@@ -5,19 +5,36 @@
 frutas = int(input('Menu de frutas opcao 1 para maca, 2 para laranja e 3 para banana. Qual fruta deseja comprar: '))
 quantidade = int(input('Quantas unidades deseja comprar: '))
 
-if frutas == 1:
-  preco = quantidade * 2.30
-  print(f'Voce comprou {quantidade} macas. O valor total a pagar é R${preco:.2f}')
+match frutas:
+    case 1:
+      preco = quantidade * 2.30
+      print(f'Voce comprou {quantidade} macas. O valor total a pagar é R${preco:.2f}')
 
-elif frutas == 2:
-  preco = quantidade * 3.60
-  print(f'Voce comprou {quantidade} laranjas. O valor total a pagar é R${preco:.2f}')
+    case 2:
+      preco = quantidade * 3.60
+      print(f'Voce comprou {quantidade} laranjas. O valor total a pagar é R${preco:.2f}')
 
-elif frutas == 3:
-  preco = quantidade * 1.85
-  print(f'Voce comprou {quantidade} bananas. O valor total a pagar é {preco:.2f}')
+    case 3:
+      preco = quantidade * 1.85
+      print(f'Voce comprou {quantidade} bananas. O valor total a pagar é {preco:.2f}')
 
-else:
-  print('Valor invalido, insira um valor de acordo com as opcoes!')
+    case _:
+     print('Valor invalido, insira um valor de acordo com as opcoes!')
+
+
+# if frutas == 1:
+#   preco = quantidade * 2.30
+#   print(f'Voce comprou {quantidade} macas. O valor total a pagar é R${preco:.2f}')
+
+# elif frutas == 2:
+#   preco = quantidade * 3.60
+#   print(f'Voce comprou {quantidade} laranjas. O valor total a pagar é R${preco:.2f}')
+
+# elif frutas == 3:
+#   preco = quantidade * 1.85
+#   print(f'Voce comprou {quantidade} bananas. O valor total a pagar é {preco:.2f}')
+
+# else:
+#   print('Valor invalido, insira um valor de acordo com as opcoes!')
 
 
