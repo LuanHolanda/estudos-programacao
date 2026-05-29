@@ -65,6 +65,7 @@ body {
 .post {
   background-color: white;
   padding: 12px;
+  border-radius: 5px;
 }
 
 .post h2, hr, a {
@@ -88,12 +89,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
 .content-right {
   background-color: white;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .content-right h3 {
@@ -115,4 +116,28 @@ body {
   color: rgba(24, 59, 253, 0.849);
   background-color: white;
   padding: 10px;
+  border-radius: 5px;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 868px){
+  #right-side {
+    display: none;
+  }
+
+  #content {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+
+  #posts .img-post {
+    width: 100%;
+  }
+
+  #footer {
+    width: 100%;
+    height: auto;
+  }
+
 }
