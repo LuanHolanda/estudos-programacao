@@ -150,6 +150,37 @@ header {
   font-size: var(--fs-2xl);
   color: var(--cor-principal);
 }
+
+/* Grid que segura os 3 cards */
+.services__grid {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+/* Card individual de cada serviço */ 
+.services__card {
+  flex: 1; /* Faz os 3 cards terem exatamente a mesma largura */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.services__card img {
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  transition: 1.2s ease-in-out;
+}
+
+.services__card img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
 /* ANIMACOES */
 @keyframes revelarEntrada {
   from {
