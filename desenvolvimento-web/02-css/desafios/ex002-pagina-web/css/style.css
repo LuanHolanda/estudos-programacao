@@ -65,6 +65,11 @@ header {
   min-height: 600px;
 }
 
+.section-card__image {
+  animation: revelarEntrada 1s ease-out forwards;
+  opacity: 0;
+}
+
 .section-card__image img {
   width: 500px;
   max-width: 100%;
@@ -84,6 +89,7 @@ header {
   gap: 15px;
   flex: 1;
   font-size: var(--fs-lg);
+  animation: revelarEntrada 1s ease-out forwards;
 }
 
 .section-card__text h1 {
@@ -95,6 +101,8 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px; 
+  animation: revelarEntrada 1s ease-out 0.3s forwards;
+  opacity: 0;
 }
 
 .section-card__image-gallery img {
@@ -142,4 +150,17 @@ header {
   font-size: var(--fs-2xl);
   color: var(--cor-principal);
 }
+/* ANIMACOES */
+@keyframes revelarEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Começa 30px mais para baixo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina na posição original */
+  }
+}
+
+/* RESPONSIVE */
 
